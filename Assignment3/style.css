@@ -1,0 +1,25 @@
+.parent {
+    height: 95vh;
+    width:70vw;
+    margin:10px auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    padding:16px;
+    border: 1px solid goldenrod;
+    color:goldenrod;
+    background: transparent;
+    transition: 1s;
+}
+button:hover{
+    border: 1px solid red;
+    color: red;
+    transform:translateY(-5px);
+    cursor:pointer;
+    box-shadow:3px 3px 0px rgb(58, 58, 58);
+}
+body {
+    background-color: black;
+}
