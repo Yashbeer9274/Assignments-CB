@@ -1,32 +1,7 @@
-/*
-switch(mainWeather) {
-                  case 'Drizzle':
-        $('body').css("background-image", "url(http://cloud-maven.com/wp-content/forum/uploads/2014/11/DSC_0061.jpg)");
-        break;
-      case 'Clouds':
-        $('body').css("background-image", "url(http://www.pd4pic.com/images/sky-blue-cloud-cloudy-background-weather-sunny.jpg)");
-        break;
-      case 'Rain':
-        $('body').css("background-image", "url(https://wallpaperscraft.com/image/rain_drops_splashes_heavy_rain_dullness_bad_weather_60638_3840x2400.jpg)");
-        break;
-      case 'Snow':
-        $('body').css("background-image", "url(https://www.walldevil.com/wallpapers/a52/snow-wallpaper-scene-nature-weather-scenery-albums.jpg)");
-        break;
-      case 'Clear':
-        $('body').css("background-image", "url(http://cache3.asset-cache.net/xd/479233488.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE480904DC2BDF8D84279DD9BE2D9A1DB104C6FCD593B398CCC9B4C7E1CCD6B915F7E)");
-        break;
-      case 'Thunderstom':
-       $('body').css("background-image", "url(https://s-media-cache-ak0.pinimg.com/564x/7e/fb/1e/7efb1e6d25184aac0998fb966732325d.jpg)");
-        break;
-      default:
-        $('body').css("background-image", "url(http://exchangedownloads.smarttech.com/public/content/c7/c7b7d2f6-0e68-41bc-b320-063ae2783f69/previews/medium/0001.png)");
-        break;
-*/
-
 const months = ["January", "February", "March", "April", 'May', "June", "July", 'August', 'September', "October", 'November', "December"]
 const weatherText = document.querySelector('.weatherText');
 
-fetch(`http://api.openweathermap.org/data/2.5/weather?q=kanpur&units=metric&appid=bbf4378d7abeb988c9b73ca8a24ec2a6`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=kanpur&units=metric&appid=bbf4378d7abeb988c9b73ca8a24ec2a6`)
     .then((data) => {
         return data.json();
     }).then((data) => {
@@ -38,7 +13,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=kanpur&units=metric&appi
             document.querySelector('.curr_date').innerHTML = curr;
             document.querySelector('.curr_temp').innerHTML = temp;
             document.querySelector('.desc').innerHTML = data.weather[0].description;
-            document.querySelector('.icon').src = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+            document.querySelector('.icon').src = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
 
             document.querySelector('.maxmin_temp').innerHTML = data.main.temp_max + " &#176;C (max) / " + data.main.temp_min + " &#176;C (min) ";
         }
@@ -61,7 +36,7 @@ weatherText.addEventListener('keypress', function (e) {
                     document.querySelector('.curr_date').innerHTML = curr;
                     document.querySelector('.curr_temp').innerHTML = temp;
                     document.querySelector('.desc').innerHTML = data.weather[0].description;
-                    document.querySelector('.icon').src = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";;
+                    document.querySelector('.icon').src = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";;
 
                     document.querySelector('.maxmin_temp').innerHTML = data.main.temp_max + " &#176;C (max) / " + data.main.temp_min + " &#176;C (min) ";
                     let newUrl;
