@@ -48,7 +48,7 @@ fetch(`http://api.openweathermap.org/data/2.5/weather?q=kanpur&units=metric&appi
 
 weatherText.addEventListener('keypress', function (e) {
     if (e.which === 13) {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${weatherText.value}&units=metric&appid=bbf4378d7abeb988c9b73ca8a24ec2a6`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${weatherText.value}&units=metric&appid=bbf4378d7abeb988c9b73ca8a24ec2a6`)
             .then((data) => {
                 return data.json();
             }).then((data) => {
