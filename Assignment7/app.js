@@ -27,9 +27,8 @@ weatherText.addEventListener('keypress', function (e) {
             .then((data) => {
                 return data.json();
             }).then((data) => {
-                console.log(data)
                 if (data.name !== undefined) {
-                    let curr = new Date().getDate() + " " + months[new Date().getMonth()] + " 2021";
+                    let curr = new Date().getDate() + " " + months[new Date().getMonth()] + " ,2021";
                     let temp = `<span class="temp">${data.main.temp} &#176;C</span>`
 
                     document.querySelector('.city_name').innerHTML = data.name;
@@ -39,8 +38,8 @@ weatherText.addEventListener('keypress', function (e) {
                     document.querySelector('.icon').src = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";;
 
                     document.querySelector('.maxmin_temp').innerHTML = data.main.temp_max + " &#176;C (max) / " + data.main.temp_min + " &#176;C (min) ";
+                    
                     let newUrl;
-
                     switch (data.weather[0].main) {
                         case 'Drizzle':
                             newUrl = "https://images.unsplash.com/photo-1529281528138-fbe93b7d25a4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZHJpenpsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
